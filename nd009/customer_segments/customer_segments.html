@@ -8451,15 +8451,15 @@ label {
 }
 /* Flexible box model classes */
 /* Taken from Alex Russell http://infrequently.org/2009/08/css-3-progress/ */
-/* This file is a compatability layer.  It allows the usage of flexible box 
+/* This file is a compatability layer.  It allows the usage of flexible box
 model layouts accross multiple browsers, including older browsers.  The newest,
 universal implementation of the flexible box model is used when available (see
-`Modern browsers` comments below).  Browsers that are known to implement this 
+`Modern browsers` comments below).  Browsers that are known to implement this
 new spec completely include:
 
     Firefox 28.0+
     Chrome 29.0+
-    Internet Explorer 11+ 
+    Internet Explorer 11+
     Opera 17.0+
 
 Browsers not listed, including Safari, are supported via the styling under the
@@ -11233,7 +11233,7 @@ div#pager .ui-resizable-handle {
   background: #f7f7f7;
   border-top: 1px solid #cfcfcf;
   border-bottom: 1px solid #cfcfcf;
-  /* This injects handle bars (a short, wide = symbol) for 
+  /* This injects handle bars (a short, wide = symbol) for
         the resize handle. */
 }
 div#pager .ui-resizable-handle::after {
@@ -11676,7 +11676,7 @@ ul.typeahead-list > li > a {
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
-    
+
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
 .ansi-black-fg { color: #3E424D; }
 .ansi-black-bg { background-color: #3E424D; }
@@ -11732,14 +11732,14 @@ div#notebook {
   div.cell {
     display: block;
     page-break-inside: avoid;
-  } 
-  div.output_wrapper { 
-    display: block;
-    page-break-inside: avoid; 
   }
-  div.output { 
+  div.output_wrapper {
     display: block;
-    page-break-inside: avoid; 
+    page-break-inside: avoid;
+  }
+  div.output {
+    display: block;
+    page-break-inside: avoid;
   }
 }
 </style>
@@ -18297,23 +18297,23 @@ Once you have performed this implementation, the dataset will be stored in the v
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># For each feature find the data points with extreme high or low values</span>
 <span class="n">outliers</span>  <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">feature</span> <span class="ow">in</span> <span class="n">log_data</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-    
+
     <span class="c1"># TODO: Calculate Q1 (25th percentile of the data) for the given feature</span>
     <span class="n">Q1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">log_data</span><span class="p">[</span><span class="n">feature</span><span class="p">],</span> <span class="mi">25</span><span class="p">)</span>
-    
+
     <span class="c1"># TODO: Calculate Q3 (75th percentile of the data) for the given feature</span>
     <span class="n">Q3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">log_data</span><span class="p">[</span><span class="n">feature</span><span class="p">],</span> <span class="mi">75</span><span class="p">)</span>
-    
+
     <span class="c1"># TODO: Use the interquartile range to calculate an outlier step (1.5 times the interquartile range)</span>
     <span class="n">step</span> <span class="o">=</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">Q3</span><span class="o">-</span><span class="n">Q1</span><span class="p">)</span>
-    
+
     <span class="c1"># Display the outliers</span>
     <span class="k">print</span> <span class="s2">&quot;Data points considered outliers for the feature &#39;{}&#39;:&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">feature</span><span class="p">)</span>
     <span class="n">outBound</span> <span class="o">=</span> <span class="n">log_data</span><span class="p">[</span><span class="o">~</span><span class="p">((</span><span class="n">log_data</span><span class="p">[</span><span class="n">feature</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">Q1</span> <span class="o">-</span> <span class="n">step</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">log_data</span><span class="p">[</span><span class="n">feature</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">Q3</span> <span class="o">+</span> <span class="n">step</span><span class="p">))]</span>
     <span class="n">display</span><span class="p">(</span><span class="n">outBound</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">outBound</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
         <span class="n">outliers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-    
+
 <span class="c1"># OPTIONAL: Select the indices for data points you wish to remove</span>
 <span class="n">outliers</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">outliers</span> <span class="k">if</span> <span class="n">outliers</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">]</span>
 <span class="k">print</span><span class="p">(</span><span class="n">outliers</span><span class="p">)</span>
@@ -22812,7 +22812,7 @@ BUIiIiIiIlJ1FAiJiIiIiEjVUSAkIiIiIiJV5/8HgyJxKNMFo9YAAAAASUVORK5CYII=
   </div>
 </body>
 
- 
+
 
 
 </html>
