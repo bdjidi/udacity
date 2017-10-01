@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>customer_segments</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>customer_segments</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11,8 +13,8 @@
 *
 */
 /*!
- * Bootstrap v3.3.7 (http://getbootstrap.com)
- * Copyright 2011-2016 Twitter, Inc.
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -1107,6 +1109,7 @@ a:focus {
   text-decoration: underline;
 }
 a:focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -2535,6 +2538,7 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -3025,6 +3029,7 @@ select[multiple].input-lg {
 .btn.focus,
 .btn:active.focus,
 .btn.active.focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -8755,9 +8760,6 @@ body > #header .header-bar {
     margin-left: 10px;
   }
 }
-[dir="rtl"] #ipython_notebook {
-  float: right !important;
-}
 #noscript {
   width: auto;
   padding-top: 16px;
@@ -8960,14 +8962,8 @@ span#login_widget > .button .badge,
  *
  * Author: Jupyter Development Team
  */
-[dir="rtl"] #tabs li {
-  float: right;
-}
 ul#tabs {
   margin-bottom: 4px;
-}
-[dir="rtl"] ul#tabs {
-  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
@@ -8990,16 +8986,6 @@ ul.breadcrumb span {
 }
 .list_toolbar .tree-buttons {
   padding-top: 1px;
-}
-[dir="rtl"] .list_toolbar .tree-buttons {
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-right {
-  padding-top: 1px;
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-left {
-  float: right !important;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9136,9 +9122,6 @@ ul.breadcrumb span {
 #tree-selector {
   padding-right: 0px;
 }
-[dir="rtl"] #tree-selector a {
-  float: right;
-}
 #button-select-all {
   min-width: 50px;
 }
@@ -9228,9 +9211,6 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
-[dir="rtl"] #new-menu {
-  text-align: right;
-}
 .kernel-menu-icon {
   padding-right: 12px;
   width: 24px;
@@ -9275,9 +9255,6 @@ ul#new-menu {
 }
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
-}
-[dir="rtl"] #running .col-sm-8 {
-  float: right !important;
 }
 .delete-button {
   display: none;
@@ -9574,7 +9551,6 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
-  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -9595,6 +9571,11 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
+}
+@-moz-document url-prefix() {
+  div.inner_cell {
+    overflow-x: hidden;
+  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -11265,7 +11246,7 @@ div#pager .ui-resizable-handle::after {
 }
 .shortcut_key {
   display: inline-block;
-  width: 21ex;
+  width: 20ex;
   text-align: right;
   font-family: monospace;
 }
@@ -11577,7 +11558,6 @@ ul.typeahead-list > li > a {
   box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
 }
 .terminal-app .terminal {
-  width: 100%;
   float: left;
   font-family: monospace;
   color: white;
@@ -11591,9 +11571,6 @@ ul.typeahead-list > li > a {
 .terminal-app .terminal dummy-screen {
   line-height: 1em;
   font-size: 14px;
-}
-.terminal-app .terminal .xterm-rows {
-  padding: 10px;
 }
 .terminal-app .terminal-cursor {
   color: black;
@@ -11654,10 +11631,8 @@ ul.typeahead-list > li > a {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -11668,11 +11643,9 @@ ul.typeahead-list > li > a {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
@@ -11840,9 +11813,7 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Wholesale customers dataset has 440 samples with 6 features each.
 </pre>
@@ -11881,9 +11852,7 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 <div class="output_html rendered_html output_subarea ">
 <div>
@@ -12030,18 +11999,14 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Chosen samples of wholesale customers dataset:
 </pre>
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 <div class="output_html rendered_html output_subarea ">
 <div>
@@ -12105,9 +12070,7 @@ div#notebook {
 
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 <div class="output_html rendered_html output_subarea ">
 <div>
@@ -12171,9 +12134,7 @@ div#notebook {
 
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 <div class="output_html rendered_html output_subarea ">
 <div>
@@ -12317,9 +12278,7 @@ Customer 2: This customer has a pretty large consumption in all features (near o
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>0.626568320581
 </pre>
@@ -12387,9 +12346,7 @@ I attempted to predict Grocery and ended up with a 0.7596 score which seems rath
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -14518,9 +14475,7 @@ Despite the lack of scaling, we can see several features exhibiting signs of cor
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -18618,9 +18573,7 @@ MBgMBsOmwDg/BoPBYDAYDAaDYVNgnB+DwWAwGAwGg8GwKfi/tBsM3KOlZsQAAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 <div class="output_html rendered_html output_subarea ">
 <div>
@@ -18748,18 +18701,14 @@ Once you have performed this implementation, the dataset will be stored in the v
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Data points considered outliers for the feature &#39;Fresh&#39;:
 </pre>
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 <div class="output_html rendered_html output_subarea ">
 <div>
@@ -18940,18 +18889,14 @@ Once you have performed this implementation, the dataset will be stored in the v
 
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Data points considered outliers for the feature &#39;Milk&#39;:
 </pre>
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 <div class="output_html rendered_html output_subarea ">
 <div>
@@ -19024,18 +18969,14 @@ Once you have performed this implementation, the dataset will be stored in the v
 
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Data points considered outliers for the feature &#39;Grocery&#39;:
 </pre>
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 <div class="output_html rendered_html output_subarea ">
 <div>
@@ -19090,18 +19031,14 @@ Once you have performed this implementation, the dataset will be stored in the v
 
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Data points considered outliers for the feature &#39;Frozen&#39;:
 </pre>
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 <div class="output_html rendered_html output_subarea ">
 <div>
@@ -19228,18 +19165,14 @@ Once you have performed this implementation, the dataset will be stored in the v
 
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Data points considered outliers for the feature &#39;Detergents_Paper&#39;:
 </pre>
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 <div class="output_html rendered_html output_subarea ">
 <div>
@@ -19294,18 +19227,14 @@ Once you have performed this implementation, the dataset will be stored in the v
 
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Data points considered outliers for the feature &#39;Delicatessen&#39;:
 </pre>
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 <div class="output_html rendered_html output_subarea ">
 <div>
@@ -19468,9 +19397,7 @@ Once you have performed this implementation, the dataset will be stored in the v
 
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[65, 66, 128, 154, 75, 154, 65, 75, 66, 128, 154]
 </pre>
@@ -19553,9 +19480,7 @@ The points [65, 66, 128, 154, 75, 154, 65, 75, 66, 128, 154] were outliers in mo
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_text output_subarea ">
@@ -19564,9 +19489,7 @@ The points [65, 66, 128, 154, 75, 154, 65, 75, 66, 128, 154] were outliers in mo
 
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -19936,9 +19859,7 @@ The first four components explain about 0.931 of the variance of the data in tot
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 <div class="output_html rendered_html output_subarea ">
 <div>
@@ -20049,9 +19970,7 @@ The first four components explain about 0.931 of the variance of the data in tot
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -20343,9 +20262,7 @@ RK5CYII=
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 <div class="output_html rendered_html output_subarea ">
 <div>
@@ -20425,9 +20342,7 @@ RK5CYII=
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt output_prompt">Out[31]:</div>
-
+<div class="output_area"><div class="prompt output_prompt">Out[31]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -20436,9 +20351,7 @@ RK5CYII=
 
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -21598,9 +21511,7 @@ K-Means clustering relies on initiating a defined number of clusters and iterati
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>For cluster number 10, silhouette score at: 0.299186881946
 For cluster number 9, silhouette score at: 0.307753432384
@@ -21667,9 +21578,7 @@ Clusters numbers 2 appears to have the highest silhouette score with 0.4219  fol
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -22341,9 +22250,7 @@ AAAAQNuhEAIAAADQdiiEAAAAALQdCiEAAAAAbef/A1ZKLVq1Z1otAAAAAElFTkSuQmCC
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 <div class="output_html rendered_html output_subarea ">
 <div>
@@ -22460,9 +22367,7 @@ AAAAQNuhEAIAAADQdiiEAAAAALQdCiEAAAAAbef/A1ZKLVq1Z1otAAAAAElFTkSuQmCC
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Sample point 0 predicted to be in Cluster 1
 The distance between sample point 0 and center of cluster 1:
@@ -22568,7 +22473,7 @@ dtype: float64
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong> One way to use the segments for A/B testing would be to improve targeting: first by preventing blindly targetting the whole pool but rather balancing the testers among the segments. By nowing the cluster of evry segment we can avoid taking A, B and control sets from different clusters which would affect our interpretention of A/B testing results and make sure we have comparable customers within every pool of our A/B testing sample. We could even lower the number of testers (or not test at all) in clusters where the reaction to the change is expected to be negative. For instance we've already noticed that segment 0 is centered around lower volume and could therefore be negatively impacted by lower delivery slots due to high inventory turns whereas segment 1 is centered around very large volumes where the gain from turns may be marginal versus economies of scale and labor (thus more profit to gain from bigger orders and less disruption).</p>
+<p><strong>Answer:</strong> One way to use the segments for A/B testing would be to improve targeting: first by preventing blindly targetting the whole pool but rather balancing the testers among the segments. By knowing the cluster of customers we can either 1) take A and B from different clusters if our intend and perform the same test on both segments if our intent is to assess customer reaction 2) take A and B from the same cluster if our intent is to size the mignitude of customer reaction. For instance we've already noticed that segment 0 is centered around lower volume and could therefore be negatively impacted by lower delivery slots due to high inventory turns whereas segment 1 is centered around very large volumes where the gain from turns may be marginal versus economies of scale and labor (thus more profit to gain from bigger orders and less disruption).</p>
 
 </div>
 </div>
@@ -22631,18 +22536,14 @@ dtype: float64
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Percentage of correctly classified customers: 90.11%
 </pre>
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -23314,8 +23215,4 @@ BUIiIiIiIlJ1FAiJiIiIiEjVUSAkIiIiIiJV5/8HgyJxKNMFo9YAAAAASUVORK5CYII=
     </div>
   </div>
 </body>
-
- 
-
-
 </html>
